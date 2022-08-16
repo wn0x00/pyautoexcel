@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pyautoexcel"
+version = "0.1.1"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pywin32 = "^304"
+
+[tool.poetry.dev-dependencies]
+coverage = "^6.4.3"
+black = {version = "^22.6.0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
