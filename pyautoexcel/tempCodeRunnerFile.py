@@ -56,15 +56,18 @@ class Excel(object):
         count = self.application.Sheets.Count
         return [self.application.Sheets[i].Name for i in range(count)]
 
-    def add_sheet(self, name: str) -> None:
-        self.workbook.Worksheets.Add(Count=1, Type=-4167)
+    def add_sheet(self, name: str, before=True) -> None:
+        if before:
+            before, after = True, False
+        else:
+            before, after = True, False
+        self.application.Sheets.Add(Before=before, After=after, Count=1, Type=-4167)
         self.workbook.ActiveSheet.Name = name
 
     def delete_sheet(self) -> None:
-        self.workbook.ActiveSheet.Delete()
+        pass
 
 
 if __name__ == "__main__":
     excel = Excel()
     excel.add_sheet("new_sheet")
-    excel.delete_sheet()
